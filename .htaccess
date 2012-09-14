@@ -1,0 +1,11 @@
+#<ifModule mod_rewrite.c>
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond $1 !^(index\.php|public\.*|private\.*)
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+#RewriteRule ^(.*)$ index.php/$1 [NC,QSA,L]
+#</ifModule>
